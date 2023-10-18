@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "SDataFactory1"
+		},
+		"AzureBlobStr_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDBDemo_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"FilterSource_connectionString": {
+			"value": ""
+		},
+		"Scenario_lookup_connectionString": {
+			"value": ""
+		},
+		"Scenario_sink_asql_connectionString": {
+			"value": ""
+		},
+		"Scenario_source_blob_connectionString": {
+			"value": ""
+		},
+		"Scenario_sql_lookup_connectionString": {
+			"value": ""
+		},
+		"SinkDataASQL_connectionString": {
+			"value": ""
+		},
+		"SourceDataBlob_connectionString": {
+			"value": ""
+		},
+		"blob_excel_sink_connectionString": {
+			"value": ""
+		},
+		"blob_excel_source_connectionString": {
+			"value": ""
+		},
+		"is_adb_accessToken": {
+			"value": ""
+		},
+		"test_blobtosql_connectionString": {
+			"value": ""
+		},
+		"is_adb_properties_typeProperties_existingClusterId": {
+			"value": "0109-055341-411xhn2q"
+		}
+	}
+}

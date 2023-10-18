@@ -1,0 +1,187 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "SDataFactory1"
+		},
+		"AzureBlobStr_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStr'"
+		},
+		"AzureSqlDBDemo_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDBDemo'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"FilterSource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'FilterSource'"
+		},
+		"Scenario_lookup_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Scenario_lookup'"
+		},
+		"Scenario_sink_asql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Scenario_sink_asql'"
+		},
+		"Scenario_source_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Scenario_source_blob'"
+		},
+		"Scenario_sql_lookup_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Scenario_sql_lookup'"
+		},
+		"SinkDataASQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SinkDataASQL'"
+		},
+		"SourceDataBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SourceDataBlob'"
+		},
+		"blob_excel_sink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blob_excel_sink'"
+		},
+		"blob_excel_source_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blob_excel_source'"
+		},
+		"is_adb_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'is_adb'"
+		},
+		"test_blobtosql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'test_blobtosql'"
+		},
+		"is_adb_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0109-055341-411xhn2q"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "SDataFactory1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStr_connectionString": {
+						"value": "[parameters('AzureBlobStr_connectionString')]"
+					},
+					"AzureSqlDBDemo_connectionString": {
+						"value": "[parameters('AzureSqlDBDemo_connectionString')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"FilterSource_connectionString": {
+						"value": "[parameters('FilterSource_connectionString')]"
+					},
+					"Scenario_lookup_connectionString": {
+						"value": "[parameters('Scenario_lookup_connectionString')]"
+					},
+					"Scenario_sink_asql_connectionString": {
+						"value": "[parameters('Scenario_sink_asql_connectionString')]"
+					},
+					"Scenario_source_blob_connectionString": {
+						"value": "[parameters('Scenario_source_blob_connectionString')]"
+					},
+					"Scenario_sql_lookup_connectionString": {
+						"value": "[parameters('Scenario_sql_lookup_connectionString')]"
+					},
+					"SinkDataASQL_connectionString": {
+						"value": "[parameters('SinkDataASQL_connectionString')]"
+					},
+					"SourceDataBlob_connectionString": {
+						"value": "[parameters('SourceDataBlob_connectionString')]"
+					},
+					"blob_excel_sink_connectionString": {
+						"value": "[parameters('blob_excel_sink_connectionString')]"
+					},
+					"blob_excel_source_connectionString": {
+						"value": "[parameters('blob_excel_source_connectionString')]"
+					},
+					"is_adb_accessToken": {
+						"value": "[parameters('is_adb_accessToken')]"
+					},
+					"test_blobtosql_connectionString": {
+						"value": "[parameters('test_blobtosql_connectionString')]"
+					},
+					"is_adb_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('is_adb_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "SDataFactory1_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'SDataFactory1_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "SDataFactory1_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'SDataFactory1_ArmTemplate_1')]"
+			]
+		}
+	]
+}
