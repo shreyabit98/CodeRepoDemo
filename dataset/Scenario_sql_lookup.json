@@ -1,0 +1,48 @@
+{
+	"name": "Scenario_sql_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Scenario_sql_lookup",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sno",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "container",
+				"type": "varchar"
+			},
+			{
+				"name": "foldername",
+				"type": "varchar"
+			},
+			{
+				"name": "filename",
+				"type": "varchar"
+			},
+			{
+				"name": "destination",
+				"type": "varchar"
+			},
+			{
+				"name": "is_filtered",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "condition",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "scenario_lookup"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

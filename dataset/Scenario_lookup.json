@@ -1,0 +1,53 @@
+{
+	"name": "Scenario_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Scenario_lookup",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "LookupData.txt",
+				"container": "scenariosalesdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sno",
+				"type": "String"
+			},
+			{
+				"name": "container",
+				"type": "String"
+			},
+			{
+				"name": "folder",
+				"type": "String"
+			},
+			{
+				"name": "file",
+				"type": "String"
+			},
+			{
+				"name": "destination",
+				"type": "String"
+			},
+			{
+				"name": "is_filtered",
+				"type": "String"
+			},
+			{
+				"name": "condition",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

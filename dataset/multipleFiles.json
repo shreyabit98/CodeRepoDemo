@@ -1,0 +1,45 @@
+{
+	"name": "multipleFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "test_blobtosql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "lookupfile.txt",
+				"container": "excelfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sno",
+				"type": "String"
+			},
+			{
+				"name": "container",
+				"type": "String"
+			},
+			{
+				"name": "folder",
+				"type": "String"
+			},
+			{
+				"name": "file",
+				"type": "String"
+			},
+			{
+				"name": "destination",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

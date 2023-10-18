@@ -1,0 +1,61 @@
+{
+	"name": "Scenario_source_blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Scenario_source_blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "DataFiles",
+				"container": "scenariosalesdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "OrderDate",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "Manager",
+				"type": "String"
+			},
+			{
+				"name": "SalesMan",
+				"type": "String"
+			},
+			{
+				"name": "Item",
+				"type": "String"
+			},
+			{
+				"name": "Units",
+				"type": "String"
+			},
+			{
+				"name": " Unit_price ",
+				"type": "String"
+			},
+			{
+				"name": "Sale_amt",
+				"type": "String"
+			},
+			{
+				"name": "Prop_8",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "sales_transformation",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "blob_source",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> blob_source",
+					"dataset": {
+						"referenceName": "blob_source",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared blob_source = let AdfDoc = AzureStorage.BlobContents(\"https://shreyastoregen2.blob.core.windows.net/datasource/Sales Performance Data.xlsx\"), Excel = Excel.Workbook(AdfDoc),ExcelSheet = Excel{[Item=\"New Orders\",Kind=\"Sheet\"]}[Data], PromotedHeaders = Table.PromoteHeaders(ExcelSheet, [PromoteAllScalars = true]) in PromotedHeaders;\r\nshared UserQuery = let Source = #\"blob_source\",\r\n  #\"Replaced value\" = Table.ReplaceValue(Source, \"Technology\", \"Tech\", Replacer.ReplaceText, {\"Category\"}),\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Replaced value\", {{\"Ship Date\", \"Shipping Date\"}}) in #\"Renamed columns\";\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}

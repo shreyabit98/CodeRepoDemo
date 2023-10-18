@@ -1,0 +1,34 @@
+{
+	"name": "DataFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "test_blobtosql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "lkupfile.txt",
+				"folderPath": "input",
+				"container": "excelfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sheetname",
+				"type": "String"
+			},
+			{
+				"name": "tablename",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

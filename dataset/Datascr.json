@@ -1,0 +1,13 @@
+{
+	"name": "Datascr",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDBDemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
