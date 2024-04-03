@@ -1,0 +1,69 @@
+{
+	"name": "SQLSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Sum of COGS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Discount Band",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Discounts",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Gross Sales",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Manufacturing Price",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Product",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Profit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Sale Price",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Sales",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Segment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Sum of Units Sold",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Financial"
+		}
+	}
+}
